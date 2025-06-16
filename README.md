@@ -8,6 +8,7 @@ The module can be installed into a existing Klipper installation with an install
     cd ~
     git clone https://github.com/aslesar2015/LoxACE.git
     cd LoxACE
+    sudo chmod +x install.sh
     ./install.sh
 
 ## Uninstall
