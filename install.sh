@@ -120,7 +120,7 @@ add_updater()
         echo "\n[update_manager LoxACE]" >> "${MOONRAKER_CONFIG_DIR}/moonraker.conf"
         echo "type: git_repo" >> "${MOONRAKER_CONFIG_DIR}/moonraker.conf"
         echo "path: ${SRCDIR}" >> "${MOONRAKER_CONFIG_DIR}/moonraker.conf"
-        echo "origin: https://github.com/BlackFrogKok/BunnyACE" >> "${MOONRAKER_CONFIG_DIR}/moonraker.conf"
+        echo "origin: https://github.com/aslesar2015/LoxACE" >> "${MOONRAKER_CONFIG_DIR}/moonraker.conf"
         echo "managed_services: klipper" >> "${MOONRAKER_CONFIG_DIR}/moonraker.conf"
         echo "\n" >> "${MOONRAKER_CONFIG_DIR}/moonraker.conf"
         echo "[OK]"
