@@ -89,7 +89,7 @@ restart_moonraker()
 {
     echo -n "Restarting Moonraker... "
     set +e
-    /etc/init.d/S56moonraker_service restart
+    sudo systemctl restart moonraker
     sleep 1
     set -e
     echo "[OK]"
@@ -98,7 +98,7 @@ restart_moonraker()
 start_klipper() {
   echo -n "Starting Klipper... "
   set +e
-  /etc/init.d/S55klipper_service start
+  sudo systemctl start moonraker
   set -e
   echo "[OK]"
 }
@@ -106,7 +106,7 @@ start_klipper() {
 stop_klipper() {
   echo -n "Stopping Klipper... "
   set +e
-  /etc/init.d/S55klipper_service stop
+  sudo systemctl stop moonraker
   set -e
   echo "[OK]"
 }
@@ -115,14 +115,14 @@ add_updater()
 {
     echo -n "Adding update manager to moonraker.conf... "
     update_section=0
-    update_section=$(grep -c '\[update_manager[a-z ]* FrogAce\]' "${MOONRAKER_CONFIG_DIR}/moonraker.conf" || true)
+    update_section=$(grep -c '\[update_manager[a-z ]* LoxAce\]' "${MOONRAKER_CONFIG_DIR}/moonraker.conf" || true)
     if [ "$update_section" -eq 0 ]; then
-        echo -e "\n[update_manager BunnyACE]" >> "${MOONRAKER_CONFIG_DIR}/moonraker.conf"
+        echo "\n[update_manager LoxACE]" >> "${MOONRAKER_CONFIG_DIR}/moonraker.conf"
         echo "type: git_repo" >> "${MOONRAKER_CONFIG_DIR}/moonraker.conf"
         echo "path: ${SRCDIR}" >> "${MOONRAKER_CONFIG_DIR}/moonraker.conf"
         echo "origin: https://github.com/BlackFrogKok/BunnyACE" >> "${MOONRAKER_CONFIG_DIR}/moonraker.conf"
         echo "managed_services: klipper" >> "${MOONRAKER_CONFIG_DIR}/moonraker.conf"
-        echo -e "\n" >> "${MOONRAKER_CONFIG_DIR}/moonraker.conf"
+        echo "\n" >> "${MOONRAKER_CONFIG_DIR}/moonraker.conf"
         echo "[OK]"
     else
         echo "[SKIPPED]"
