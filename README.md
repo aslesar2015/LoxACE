@@ -6,8 +6,8 @@ A Work-In-Progress driver for Anycubic Color Engine Pro for Klipper
 The module can be installed into a existing Klipper installation with an install script. 
 
     cd ~
-    git clone https://github.com/BlackFrogKok/BunnyACE.git
-    cd BunnyACE
+    git clone https://github.com/aslesar2015/LoxACE.git
+    cd LoxACE
     ./install.sh
 
 ## Uninstall
@@ -16,7 +16,7 @@ Remove all BunnyAce definitions in your Klipper configuration and the updater
 section in the Moonraker configuration. Then run the script to remove the link:
 
     cd ~
-    cd BunnyACE
+    cd LoxACE
     ./install.sh -u
 
 ## Pinout
